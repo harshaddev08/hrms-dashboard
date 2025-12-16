@@ -1,7 +1,15 @@
+"use client";
 import { Button, Checkbox, Input, Typography } from "@/components";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
+
+  const handleForgotPassword = () => {
+    router.push("forgot-password");
+  };
+
   return (
     <div className="flex flex-1 w-full">
       <div className="flex flex-col justify-center min-w-[445px] ">
@@ -29,7 +37,14 @@ export default function Login() {
             placeholder="Enter password"
             type="password"
           />
-          <Checkbox label="Remember me" />
+          <div className="flex justify-between">
+            <Checkbox label="Remember me" />
+            <button className="cursor-pointer" onClick={handleForgotPassword}>
+              <Typography variant="body2" className="text-primary-500">
+                Forgot Password?
+              </Typography>
+            </button>
+          </div>
         </div>
         <Button>Login</Button>
       </div>
