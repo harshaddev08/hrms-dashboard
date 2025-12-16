@@ -6,8 +6,10 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
 }
 
-export const Input: FC<InputProps> = ({ label, type, ...props }) => {
+export const Input: FC<InputProps> = ({ label, type, id, ...props }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const generatedId = React.useId();
+  const inputId = id || generatedId;
 
   const handleTogglePassword = () => {
     setShowPassword((prev) => !prev);
@@ -17,12 +19,16 @@ export const Input: FC<InputProps> = ({ label, type, ...props }) => {
     <div className="flex gap-4 border border-primary-500 px-4 py-2 rounded-lg">
       <div className="flex w-full flex-col gap-2 ">
         {label && (
-          <label htmlFor="" className="font-light text-xs text-primary-500">
+          <label
+            htmlFor={inputId}
+            className="font-light text-xs text-primary-500"
+          >
             {label}
           </label>
         )}
 
         <input
+          id={inputId}
           type={
             type === "password" ? (showPassword ? "text" : "password") : type
           }
@@ -31,7 +37,7 @@ export const Input: FC<InputProps> = ({ label, type, ...props }) => {
         />
       </div>
       {type === "password" && (
-        <button onClick={handleTogglePassword}>
+        <button type="button" onClick={handleTogglePassword}>
           {showPassword ? (
             <EyeIcon width={24} height={24} />
           ) : (
