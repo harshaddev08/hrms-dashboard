@@ -44,7 +44,7 @@ const menuItems = [
   {
     name: "Jobs",
     icon: BriefcaseIcon,
-    href: "/  jobs",
+    href: "/jobs",
   },
   {
     name: "Candidates",
@@ -91,11 +91,12 @@ const SidebarMenu = ({ item, isActive }: SidebarMenuItemProps) => {
       onClick={handleOnclick}
       className={cn(
         "flex items-center px-5 py-3.5 gap-4 h-12.5 rounded-tr-xl rounded-br-xl ",
-        isActive && "border-l-3  border-primary-500 bg-primary-5",
-        !isActive && "border-l-3 border-transparent"
+        isActive &&
+          "border-l-3  border-primary-500 bg-primary-5 text-primary-500 font-semibold",
+        !isActive && "border-l-3 border-transparent "
       )}
     >
-      <item.icon color="currentColor" />
+      <item.icon />
       <span>{item.name}</span>
     </button>
   );
