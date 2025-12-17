@@ -4,3 +4,4 @@ export * from "./Checkbox";
 export * from "./Typography";
 export * from "./OTPInput";
 export * from "./Modal";
+export * from "./SearchInput";

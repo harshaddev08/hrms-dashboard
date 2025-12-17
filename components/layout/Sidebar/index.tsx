@@ -11,7 +11,7 @@ import {
   SettingsIcon,
   UsersIcon,
   UsersTwoIcon,
-} from "../icons";
+} from "@/components/icons";
 import { cn } from "@/utils/cn";
 import { usePathname, useRouter } from "next/navigation";
 

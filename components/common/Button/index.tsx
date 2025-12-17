@@ -3,22 +3,13 @@ import React, { forwardRef } from "react";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "danger";
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
   loading?: boolean;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    {
-      children,
-      className,
-      variant = "primary",
-      size = "md",
-      loading = false,
-      disabled,
-      ...props
-    },
+    { children, className, size = "md", loading = false, disabled, ...props },
     ref
   ) => {
     return (
@@ -27,25 +18,19 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled || loading}
         className={cn(
           // 🔹 Base styles
-          "inline-flex items-center justify-center font-medium transition-colors",
-          "w-full h-[56px] gap-[10px] px-[20px] py-[20px] rounded-[10px] opacity-100",
-          "focus:outline-none focus:ring-2 focus:ring-offset-2",
+          "inline-flex items-center justify-center font-medium bg-primary-500 text-white-500",
+          "w-full gap-[10px] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer",
 
-          // 🔹 Size overrides (optional – can override fixed design if needed)
+          // 🔹 Size variants
           {
-            "text-sm": size === "sm",
-            "text-base": size === "md",
-            "text-lg": size === "lg",
-
-            // 🔹 Variants
-            "bg-primary-600 text-white-500 hover:bg-primary-700":
-              variant === "primary",
-            "bg-secondary-600 text-white-500 hover:bg-secondary-700":
-              variant === "secondary",
-            "border border-gray-500 text-dark-500 hover:bg-gray-100":
-              variant === "outline",
-            "bg-tertiary-600 text-white-500 hover:bg-tertiary-700 focus:ring-tertiary-600":
-              variant === "danger",
+            // lg
+            "h-14 p-5 rounded-[10px] text-lg": size === "lg",
+            // md
+            "h-12.5 p-5 rounded-[10px] text-base": size === "md",
+            // sm
+            "h-10 p-2.5 rounded-[10px] text-sm": size === "sm",
+            // xs
+            "h-8 p-2 rounded-[8px] text-xs": size === "xs",
 
             // 🔹 Disabled / Loading
             "opacity-60 cursor-not-allowed": disabled || loading,

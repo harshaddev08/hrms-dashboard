@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components";
+import { Sidebar, Header } from "@/components";
 
 export default function LoginLayout({
   children,
@@ -9,7 +9,10 @@ export default function LoginLayout({
     <div className="flex h-screen gap-8 p-5">
       <Sidebar />
 
-      <div className="flex-1">{children}</div>
+      <div className="flex flex-col gap-7.5 flex-1">
+        <Header />
+        {children}
+      </div>
     </div>
   );
 }

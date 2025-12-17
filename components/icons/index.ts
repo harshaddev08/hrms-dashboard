@@ -11,3 +11,6 @@ export * from "./CoinDollarIcon";
 export * from "./CalendarCheckIcon";
 export * from "./CommunityIcon";
 export * from "./UsersTwoIcon";
+export * from "./SearchIcon";
+export * from "./NotificationIcon";
+export * from "./ArrowDownIcon";
