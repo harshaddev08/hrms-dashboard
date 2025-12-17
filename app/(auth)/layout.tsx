@@ -6,11 +6,11 @@ export default function LoginLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="p-8 flex h-full gap-12 items-center">
+    <div className="p-8 flex h-screen gap-12 items-center">
       {/* dashboard image */}
-      <div className="flex h-full flex-1 justify-end rounded-4xl items-center bg-primary-5">
+      <div className="flex py-24 pl-32 h-full flex-1 justify-end rounded-4xl items-center bg-primary-5">
         <Image
-          className="py-24 pl-32"
+          className=" h-full w-full object-contain object-right"
           src="/images/dashboard-view.png"
           alt="dashboard"
           width={778}
