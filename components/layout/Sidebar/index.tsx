@@ -106,7 +106,7 @@ export const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-full bg-gray-20 w-72 p-8 rounded-[20px]">
+    <div className="flex h-full bg-gray-20 w-72 p-8 rounded-[20px] shrink-0">
       <div className="flex w-full flex-col gap-8">
         <div className="relative w-32 h-12.5">
           <Image

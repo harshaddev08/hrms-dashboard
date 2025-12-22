@@ -91,6 +91,14 @@
   --color-white-20: #ffffff33;
   --color-white-10: #ffffff1a;
   --color-white-5: #ffffff0d;
+
+  /* Success color */
+  --color-success-500: #30BE82;
+  --color-success-10:#30BE821A;
+
+  /* Danger color */
+  --color-danger-500: #F45B69;
+  --color-danger-10:#F45B691A;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -99,6 +107,97 @@
     --foreground: #ededed;
   }
 } */
+
+.gradient-color-primary {
+ background: linear-gradient(
+  270deg,
+#7152F3,
+ #7152F300
+);
+
+}
+
+
+
+.react-calendar {
+  @apply !w-full !border-none !text-dark-500 !font-light !text-base;
+}
+
+.react-calendar__navigation {
+  @apply !flex !items-center !justify-between !mb-6;
+}
+
+.react-calendar__navigation button {
+  @apply !min-w-[44px] !bg-none !p-0 !flex !items-center !justify-center !text-dark-500 !rounded-lg hover:!bg-light-500 !transition-colors;
+}
+
+.react-calendar__navigation__label {
+  @apply !text-base !font-semibold !pointer-events-none !grow-0;
+}
+
+
+
+
+.react-calendar__navigation__arrow {
+  @apply  !bg-primary-500 !w-[34px] !h-[34px] !rounded-lg !py-2 !flex !items-center !justify-center !cursor-pointer !text-white-500;
+}
+
+.react-calendar__month-view__weekdays {
+  @apply  !text-xs !font-medium ;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  @apply !p-[0.5em];
+}
+
+.react-calendar__month-view__days {
+  @apply gap-y-2;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  @apply !text-dark-500  !no-underline !decoration-0;
+}
+
+.react-calendar__month-view__days__day {
+  @apply !p-2 !text-sm !font-normal !text-dark-500 
+         !flex !items-center !justify-center 
+         !rounded-full hover:!bg-primary-5 !transition-colors;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  @apply !text-dark-500;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  @apply !text-gray-200;
+}
+
+.react-calendar__tile--now {
+  @apply !bg-transparent !text-primary-500 !font-semibold;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  @apply !bg-primary-5 !text-primary-600;
+}
+
+.react-calendar__tile--active {
+  @apply !bg-primary-500 !text-white-500 
+         !w-[35px] !h-[35px] 
+         !rounded-full !shadow-md !shadow-primary-20 
+         !flex !items-center !justify-center;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  @apply !bg-primary-600 !text-white-500;
+}
+
+/* Hide double arrows (prev2/next2) if needed, otherwise style them */
+.react-calendar__navigation__prev2-button,
+.react-calendar__navigation__next2-button {
+  @apply !hidden;
+}
+
 
 body {
   background: var(--background);

@@ -6,12 +6,14 @@ export default function LoginLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex h-screen gap-8 p-5">
+    <div className="flex h-screen gap-8 p-5 overflow-hidden">
       <Sidebar />
 
-      <div className="flex flex-col gap-7.5 flex-1">
+      <div className="flex flex-col flex-1 h-full overflow-hidden">
         <Header />
-        {children}
+        <div className="flex-1 overflow-y-auto pr-2 pb-5 pt-7.5">
+          {children}
+        </div>
       </div>
     </div>
   );
