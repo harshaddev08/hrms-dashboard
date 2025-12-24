@@ -19,7 +19,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           // 🔹 Base styles
           "inline-flex items-center justify-center font-medium bg-primary-500 text-white-500",
-          "w-full gap-[10px] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer",
+          "w-full gap-[10px] transition-colors cursor-pointer",
 
           // 🔹 Size variants
           {

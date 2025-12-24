@@ -7,3 +7,4 @@ export * from "./Modal";
 export * from "./SearchInput";
 export * from "./IconButton";
 export * from "./CustomCalender";
+export * from "./Table";
